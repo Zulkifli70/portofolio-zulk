@@ -13,10 +13,12 @@ import "../styles/global.css";
     <title>Astro</title>
   </head>
   <body
-    class="bg-dark-90 font-display text-slate-900 transition-colors duration-300"
+    class="bg-dark-40 font-display text-slate-900 dark:text-white transition-colors duration-300"
   >
     <Header />
-    <slot />
+    <main class="relative hero-gradient">
+      <slot />
+    </main>
     <Footer />
   </body>
 </html>

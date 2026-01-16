@@ -59,3 +59,11 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(56, 224, 123, 0.1);
 }
+
+.hero-gradient {
+  background: radial-gradient(
+    circle at top right,
+    rgba(54, 99, 72, 0.3) 0%,
+    transparent 70%
+  );
+}
