@@ -1,18 +1,128 @@
 <nav class="hidden md:flex items-center gap-8">
   <a
-    class="text-sm font-medium hover:text-primary-50 transition-colors"
+    class="nav-link text-sm font-medium hover:text-primary-50 transition-colors"
     href="#stack">Stack</a
   >
   <a
-    class="text-sm font-medium hover:text-primary-50 transition-colors"
+    class="nav-link text-sm font-medium hover:text-primary-50 transition-colors"
     href="#projects">Projects</a
   >
   <a
-    class="text-sm font-medium hover:text-primary-50 transition-colors"
+    class="nav-link text-sm font-medium hover:text-primary-50 transition-colors"
     href="#experience">Experience</a
   >
   <a
-    class="text-sm font-medium hover:text-primary-50 transition-colors"
+    class="nav-link text-sm font-medium hover:text-primary-50 transition-colors"
     href="#contact">Contact</a
   >
 </nav>
+
+<style>
+  /* Style untuk link navigasi active */
+  .nav-link.active {
+    color: var(--color-primary-50);
+    position: relative;
+  }
+
+  /* Garis bawah untuk link active */
+  .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--color-primary-50);
+    border-radius: 2px;
+  }
+</style>
+
+<script>
+  // Fungsi untuk menginisialisasi scroll spy
+  function initScrollSpy() {
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section[id]");
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-50% 0px -50% 0px",
+      threshold: 0,
+    };
+
+    function setActiveLink(id: string) {
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+      if (activeLink) {
+        activeLink.classList.add("active");
+      }
+    }
+
+    // Fungsi untuk cek apakah di atas semua section
+    function checkIfAtTop() {
+      const firstSection = sections[0];
+      if (firstSection) {
+        const rect = firstSection.getBoundingClientRect();
+        // Jika section pertama masih di bawah viewport, berarti kita di hero
+        if (rect.top > window.innerHeight / 2) {
+          navLinks.forEach((link) => {
+            link.classList.remove("active");
+          });
+        }
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink(entry.target.id);
+        }
+      });
+    }, observerOptions);
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    // Monitor scroll untuk deteksi posisi paling atas
+    let scrollTimeout: ReturnType<typeof setTimeout>;
+    window.addEventListener(
+      "scroll",
+      () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(checkIfAtTop, 50);
+      },
+      { passive: true }
+    );
+
+    // Check saat load
+    checkIfAtTop();
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        const targetId = (link as HTMLAnchorElement)
+          .getAttribute("href")
+          ?.substring(1);
+        const targetSection = targetId
+          ? document.getElementById(targetId)
+          : null;
+
+        if (targetSection) {
+          targetSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+  }
+
+  // Jalankan ketika halaman dimuat
+  initScrollSpy();
+
+  // Re-initialize setelah navigasi (untuk Astro View Transitions jika dipakai)
+  document.addEventListener("astro:page-load", initScrollSpy);
+</script>
