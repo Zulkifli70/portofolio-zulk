@@ -2,32 +2,34 @@
 
 @theme {
   /* =========================
-     PRIMARY (Green Accent)
+     PRIMARY (Blue Accent)
      ========================= */
-  --color-primary-10: #e9fdf1;
-  --color-primary-20: #c8f8dc;
-  --color-primary-30: #9ff0c1;
-  --color-primary-40: #6be7a0;
-  --color-primary-50: #38e07b; /* base */
-  --color-primary-60: #2fc46b;
-  --color-primary-70: #26985a;
-  --color-primary-80: #1d6c41;
-  --color-primary-90: #14472c;
-  --color-primary-100: #0b2a19;
+  --color-primary-50: #e5fbff;
+  --color-primary-100: #ccf6ff;
+  --color-primary-200: #99eeff;
+  --color-primary-300: #66e5ff;
+  --color-primary-400: #33ddff; /* base */
+  --color-primary-500: #00d4ff;
+  --color-primary-600: #00aacc;
+  --color-primary-700: #007f99;
+  --color-primary-800: #005566;
+  --color-primary-900: #002a33;
+  --color-primary-950: #020617;
 
   /* =========================
-     BACKGROUND LIGHT
+     Secondary (Sapphire)
      ========================= */
-  --color-light-10: #ffffff;
-  --color-light-20: #f6f8f7; /* base */
-  --color-light-30: #e9eeec;
-  --color-light-40: #dce3e0;
-  --color-light-50: #cfd8d4;
-  --color-light-60: #b3c0bb;
-  --color-light-70: #97a9a3;
-  --color-light-80: #7b918b;
-  --color-light-90: #5f7972;
-  --color-light-100: #445f58;
+  --color-secondary-50: #e5f0ff;
+  --color-secondary-100: #cce0ff; /* base */
+  --color-secondary-200: #99c2ff;
+  --color-secondary-300: #66a3ff;
+  --color-secondary-400: #3385ff;
+  --color-secondary-500: #0066ff;
+  --color-secondary-600: #0052cc;
+  --color-secondary-700: #003d99;
+  --color-secondary-800: #002966;
+  --color-secondary-900: #001433;
+  --color-secondary-950: #000e24;
 
   /* =========================
      BACKGROUND DARK
@@ -55,19 +57,19 @@
 }
 
 .glass-card {
-  background: rgba(27, 49, 36, 0.4);
+  background: rgba(15, 23, 42, 0.4);
   backdrop-filter: blur(12px);
-  border: 2px solid rgba(37, 71, 37, 0.1);
+  border: 1px solid rgba(0, 212, 255, 0.1);
 }
 
 .glass-card:hover {
-  border-color: var(--color-primary-50);
+  border-color: var(--color-primary-500);
 }
 
 .hero-gradient {
   background: radial-gradient(
     circle at top right,
-    rgba(54, 99, 72, 0.3) 0%,
+    rgba(0, 102, 255, 0.15) 0%,
     transparent 70%
   );
 }
