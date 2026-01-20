@@ -66,6 +66,14 @@
   border-color: var(--color-primary-500);
 }
 
+.browser-mockup {
+  transform: perspective(1000px) rotateY(-10deg) rotateX(5deg);
+  transition: transform 0.5s ease;
+}
+.browser-mockup:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+}
+
 .hero-gradient {
   background: radial-gradient(
     circle at top right,
