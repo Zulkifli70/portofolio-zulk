@@ -1,6 +1,6 @@
 ---
 import CardProject from "../CardProject.astro";
-import {projects}
+import { projects } from "../../scripts/data";
 ---
 
 <section class="bg-white/5">
@@ -8,8 +8,19 @@ import {projects}
     <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
       Selected Projects
     </h1>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {
+        projects.map((project) => (
+          <CardProject
+            name={project.name}
+            tag1={project.tag1}
+            tag2={project.tag2}
+            tag3={project.tag3}
+            imgSrc={project.imgSrc}
+            desc={project.desc}
+          />
+        ))
+      }
     </div>
   </div>
 </section>
