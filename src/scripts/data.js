@@ -6,6 +6,8 @@ export const projects = [
     tag3: "TYPESCRIPT",
     name: "Print Forge 3D printing website",
     desc: "3D Printing website catalog. Features product filtering, search functionality.",
+    githubLink: "https://github.com/Zulkifli70/next-project",
+    liveDemo: "https://next-project-eta-vert.vercel.app/",
   },
   {
     imgSrc: "/projectImg/PokemonMemoryGame.jpeg",
@@ -14,6 +16,8 @@ export const projects = [
     tag3: "JAVASCRIPT",
     name: "Pokemon memory game",
     desc: "Card memory game that test your memorization skill",
+    githubLink: "https://github.com/Zulkifli70/memory-card-game",
+    liveDemo: "https://zulkmemorycard.netlify.app/",
   },
   {
     imgSrc: "/projectImg/toko-hero.jpg",
@@ -22,6 +26,8 @@ export const projects = [
     tag3: "JAVASCRIPT",
     name: "Grocery store catalog website",
     desc: "A responsive e-commerce catalog website for a local grocery store. Features product filtering, search functionality.",
+    githubLink: "https://github.com/Zulkifli70/TokoBuRohani",
+    liveDemo: "https://zulktoko.netlify.app/",
   },
   {
     imgSrc: "/projectImg/worlde.png",
@@ -30,6 +36,8 @@ export const projects = [
     tag3: "TYPESCRIPT",
     name: "Assembly: Endgame - Programming Language Word Game",
     desc: "A thrilling word-guessing game where you must guess programming terms before Assembly takes over!",
+    githubLink: "https://github.com/Zulkifli70/react-ts",
+    liveDemo: "https://zulkwordle.netlify.app/",
   },
   {
     imgSrc: "/projectImg/tenzies.jpeg",
@@ -38,6 +46,8 @@ export const projects = [
     tag3: "TYPESCRIPT",
     name: "Tenzies Game",
     desc: "A fun React-based dice game where you roll until all 10 dice show the same number. Click to freeze dice between rolls!",
+    githubLink: "https://github.com/Zulkifli70/tenzies-ts",
+    liveDemo: "https://zulktenzies.netlify.app/",
   },
   {
     imgSrc: "/projectImg/comingsoon.png",
