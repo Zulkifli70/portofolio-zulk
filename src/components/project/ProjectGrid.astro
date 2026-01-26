@@ -5,14 +5,30 @@ import { projects } from "../../scripts/data";
 
 <section class="bg-white/5">
   <div class="max-w-6xl mx-auto px-6 py-10">
-    <h1
-      class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight mb-20"
-    >
-      Selected Projects
-    </h1>
-    <p class="text-slate-400">
-      A selection of my recent work in engineering and design.
-    </p>
+    <div class="flex flex-col gap-5 py-5">
+      <a href="/" class="text-primary-500 font-bold flex gap-3 group">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="size-6 group-hover:translate-x-[-1em]"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"></path>
+        </svg>
+        Back to Main Page</a
+      >
+      <h1 class="text-5xl md:text-7xl font-black leading-[1.1] tracking-tight">
+        Selected Projects
+      </h1>
+      <p class="text-slate-400">
+        A selection of my recent work in engineering and design.
+      </p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
       {
         projects.map((project) => (
